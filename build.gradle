@@ -34,7 +34,7 @@ dependencies {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-    localPath '/Users/seanhenry/Library/Application Support/JetBrains/Toolbox/apps/AppCode/ch-0/203.5981.213/AppCode.app/Contents'
+    localPath '/Users/ales.m.michalek/Library/Application Support/JetBrains/Toolbox/apps/AppCode/ch-0/211.7442.43/AppCode.app/Contents'
     // look in AppCode.app/Contents/Plugins/builtinRegistry.xml to find bundled plugins
     setPlugins("com.intellij.swift.lang", "com.intellij.cidr.base")
 }
@@ -50,6 +50,6 @@ test {
 }
 
 runIde {
-    ideDirectory '/Users/seanhenry/Library/Application Support/JetBrains/Toolbox/apps/AppCode/ch-0/203.5981.213/AppCode.app/Contents'
+    ideDirectory '/Users/ales.m.michalek/Library/Application Support/JetBrains/Toolbox/apps/AppCode/ch-0/211.7442.43/AppCode.app/Contents'
     jvmArgs '-Xmx2048m'
 }
