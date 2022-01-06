@@ -5,7 +5,7 @@ plugins {
 }
 
 group 'codes.seanhenry.mockgenerator'
-version '20'
+version '21'
 
 sourceCompatibility = 1.8
 
@@ -34,15 +34,15 @@ dependencies {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-    localPath '/Users/ales.m.michalek/Library/Application Support/JetBrains/Toolbox/apps/AppCode/ch-0/212.4746.137/AppCode.app/Contents'
+    localPath '/Users/amichalek/Library/Application Support/JetBrains/Toolbox/apps/AppCode/ch-0/213.5744.274/AppCode.app/Contents'
     // look in AppCode.app/Contents/Plugins/builtinRegistry.xml to find bundled plugins
     setPlugins("com.intellij.swift.lang", "com.intellij.cidr.base")
 }
 
 patchPluginXml {
     changeNotes """
-      Adds support for AppCode 2021.1"""
-    sinceBuild '203'
+      Adds support for AppCode 2021.3"""
+    sinceBuild '213'
 }
 
 test {
@@ -50,6 +50,6 @@ test {
 }
 
 runIde {
-    ideDirectory '/Users/ales.m.michalek/Library/Application Support/JetBrains/Toolbox/apps/AppCode/ch-0/212.4746.137/AppCode.app/Contents'
+    ideDirectory '/Users/amichalek/Library/Application Support/JetBrains/Toolbox/apps/AppCode/ch-0/213.5744.274/AppCode.app/Contents'
     jvmArgs '-Xmx2048m'
 }
