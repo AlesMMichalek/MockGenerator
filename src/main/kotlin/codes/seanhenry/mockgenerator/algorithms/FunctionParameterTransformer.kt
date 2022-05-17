@@ -2,6 +2,7 @@ package codes.seanhenry.mockgenerator.algorithms
 
 import codes.seanhenry.mockgenerator.entities.*
 import codes.seanhenry.mockgenerator.generator.ClosureParameterViewModel
+import codes.seanhenry.mockgenerator.util.simpleCapitalize
 import codes.seanhenry.mockgenerator.visitor.RecursiveVisitor
 
 class FunctionParameterTransformer(val name: String): RecursiveVisitor() {
@@ -11,7 +12,7 @@ class FunctionParameterTransformer(val name: String): RecursiveVisitor() {
 
   override fun visitFunctionType(type: FunctionType) {
     transformed = ClosureParameterViewModel(
-        name.capitalize(),
+        name.simpleCapitalize(),
         name,
         transformClosureToTupleDeclaration(type.arguments),
         transformClosureToImplicitTupleAssignment(type),

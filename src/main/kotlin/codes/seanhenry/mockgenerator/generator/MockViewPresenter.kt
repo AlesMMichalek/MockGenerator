@@ -168,7 +168,7 @@ class MockViewPresenter(val view: MockView): MockTransformer {
     return properties.map {
       PropertyViewModel(
           it.name,
-          getUniqueName(it).capitalize(),
+          getUniqueName(it).simpleCapitalize(),
           it.isWritable,
           optionalizeIUO(it.type).text,
           surroundWithOptional(removeOptional(it.type), false).text,
@@ -226,7 +226,7 @@ class MockViewPresenter(val view: MockView): MockTransformer {
   private fun transformMethods(methods: List<Method>, isClass: Boolean): List<MethodViewModel> {
     return methods.map { m ->
       MethodViewModel(
-          getUniqueName(m).capitalize(),
+          getUniqueName(m).simpleCapitalize(),
           transformParameters(m),
           m.parametersList.mapNotNull { transformClosureParameters(it) },
           transformReturnType(m),

@@ -15,9 +15,8 @@ import codes.seanhenry.util.AssociatedTypeGenericConverter;
 import codes.seanhenry.util.MySwiftPsiUtil;
 import com.intellij.codeInsight.intention.IntentionAction;
 import com.intellij.codeInsight.intention.PsiElementBaseIntentionAction;
-import com.intellij.openapi.components.ProjectComponent;
+import com.intellij.openapi.components.NamedComponent;
 import com.intellij.openapi.editor.Editor;
-import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
@@ -25,10 +24,6 @@ import com.intellij.psi.PsiFileFactory;
 import com.intellij.psi.PsiInvalidElementAccessException;
 import com.intellij.psi.util.PsiTreeUtil;
 import com.intellij.util.IncorrectOperationException;
-//import com.jetbrains.cidr.xcode.model.PBXProjectFile;
-//import com.jetbrains.cidr.xcode.model.PBXTarget;
-//import com.jetbrains.cidr.xcode.model.XcodeMetaData;
-//import com.jetbrains.swift.SwiftLanguage;
 import com.jetbrains.swift.SwiftLanguage;
 import com.jetbrains.swift.psi.SwiftClassDeclaration;
 import com.jetbrains.swift.psi.SwiftTypeElement;
@@ -41,7 +36,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-public abstract class BaseGeneratingIntention extends PsiElementBaseIntentionAction implements IntentionAction, ProjectComponent {
+public abstract class BaseGeneratingIntention extends PsiElementBaseIntentionAction implements IntentionAction, NamedComponent {
 
   private SwiftClassDeclaration classDeclaration;
   static ErrorPresenter errorPresenter = new DefaultErrorPresenter();
@@ -213,22 +208,6 @@ public abstract class BaseGeneratingIntention extends PsiElementBaseIntentionAct
   @Override
   public String getFamilyName() {
     return getText();
-  }
-
-  @Override
-  public void projectOpened() {
-  }
-
-  @Override
-  public void projectClosed() {
-  }
-
-  @Override
-  public void initComponent() {
-  }
-
-  @Override
-  public void disposeComponent() {
   }
 
   @NotNull

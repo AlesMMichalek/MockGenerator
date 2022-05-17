@@ -5,7 +5,7 @@ plugins {
 }
 
 group 'codes.seanhenry.mockgenerator'
-version '22-test-1'
+version '22'
 
 sourceCompatibility = 1.8
 
@@ -16,13 +16,13 @@ repositories {
 instrumentCode {
     // AppCode isn't bundled with the required SDKs and it's not publicly available yet so we choose the compile tools from IntelliJ
     // https://www.jetbrains.com/intellij-repository/releases
-    compilerVersion = "203.5981.155"
+    compilerVersion = "221.5591.52"
 }
 
 instrumentTestCode {
     // AppCode isn't bundled with the required SDKs and it's not publicly available yet so we choose the compile tools from IntelliJ
     // https://www.jetbrains.com/intellij-repository/releases
-    compilerVersion = "203.5981.155"
+    compilerVersion = "221.5591.52"
 }
 
 dependencies {
@@ -42,8 +42,8 @@ intellij {
 
 patchPluginXml {
     changeNotes = """
-      Adds support for AppCode 2021.3"""
-    sinceBuild = '213'
+      Adds support for AppCode 2022.1"""
+    sinceBuild = '221'
 }
 
 test {
