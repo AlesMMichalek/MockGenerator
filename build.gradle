@@ -1,11 +1,11 @@
 plugins {
     id 'java'
-    id 'org.jetbrains.intellij' version '0.6.5'
-    id 'org.jetbrains.kotlin.jvm' version '1.4.21'
+    id 'org.jetbrains.intellij' version '1.5.3'
+    id 'org.jetbrains.kotlin.jvm' version '1.6.21'
 }
 
 group 'codes.seanhenry.mockgenerator'
-version '21'
+version '22-test-1'
 
 sourceCompatibility = 1.8
 
@@ -29,27 +29,28 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib"
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
-    compile 'com.github.spullara.mustache.java:compiler:0.9.5'
+    implementation 'com.github.spullara.mustache.java:compiler:0.9.10'
+    testImplementation 'org.jetbrains.kotlin:kotlin-test'
 }
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-    localPath '/Users/amichalek/Library/Application Support/JetBrains/Toolbox/apps/AppCode/ch-0/213.5744.274/AppCode.app/Contents'
+    localPath = '/Users/amichalek/Library/Application Support/JetBrains/Toolbox/apps/AppCode/ch-0/221.5591.52/AppCode.app/Contents'
     // look in AppCode.app/Contents/Plugins/builtinRegistry.xml to find bundled plugins
-    setPlugins("com.intellij.swift.lang", "com.intellij.cidr.base")
+    plugins = ['com.intellij.swift.lang', 'com.intellij.cidr.base']
 }
 
 patchPluginXml {
-    changeNotes """
+    changeNotes = """
       Adds support for AppCode 2021.3"""
-    sinceBuild '213'
+    sinceBuild = '213'
 }
 
 test {
     useJUnitPlatform()
 }
 
-runIde {
-    ideDirectory '/Users/amichalek/Library/Application Support/JetBrains/Toolbox/apps/AppCode/ch-0/213.5744.274/AppCode.app/Contents'
-    jvmArgs '-Xmx2048m'
-}
+//runIde {
+//    ideDirectory = '/Users/amichalek/Library/Application Support/JetBrains/Toolbox/apps/AppCode/ch-0/221.5591.52/AppCode.app/Contents'
+//    jvmArgs = '-Xmx2048m'
+//}

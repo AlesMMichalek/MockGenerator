@@ -93,7 +93,7 @@ class TypeTransformer : SwiftVisitor() {
     return clause?.isThrows ?: false
   }
 
-  override fun visitInoutTypeElement(element: SwiftInoutTypeElement) {
+  override fun visitInoutIsolatedTypeElement(element: SwiftInoutIsolatedTypeElement) {
     transformedType = transform(element.component!!)
   }
 
